@@ -22,4 +22,4 @@ Warning:
 
 The program is provided "as is" without any responsibility for the consequences of its use, so do not forget about Undo (Ctrl + Z) and backups.
 
-(c) COPYRIGHT B. Samchuk (DinoProga), 2023.
+(c) COPYRIGHT B. Samchuk (DinoProga), 2023-2024.
