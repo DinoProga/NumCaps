@@ -1,7 +1,7 @@
 ﻿/*
  * REM DinoProga!!!
  *
- * (c) COPYRIGHT, B. Samchuk (DinoProga), 2023-2024.
+ * (c) COPYRIGHT, B. Samchuk (DinoProga), 2023-2025.
  */
 
 using NumCaps.Properties;
@@ -209,14 +209,9 @@ internal class TrayAgent : Form
         TextInfo Info = language.Culture.TextInfo;
         foreach (char ch in raw)
         {
-            if (char.IsUpper(ch))
-            {
-                _ = Builder.Append(Info.ToLower(ch));
-            }
-            else
-            {
-                _ = char.IsLower(ch) ? Builder.Append(Info.ToUpper(ch)) : Builder.Append(ch);
-            }
+            _ = char.IsUpper(ch) 
+                ? Builder.Append(Info.ToLower(ch)) : char.IsLower(ch)
+                ? Builder.Append(Info.ToUpper(ch)) : Builder.Append(ch);
         }
         string RecapString = Builder.ToString();
         foreach (ToolStripMenuItem? c in recapMenu.DropDownItems)
@@ -333,7 +328,7 @@ internal class TrayAgent : Form
 
     private void Start()
     {
-        updateTimer.Interval = 100;
+        updateTimer.Interval = 200;
         updateTimer.Tick += UpdateTimer_Tick;
         updateTimer.Enabled = true;
     }
